@@ -1,0 +1,7 @@
+ext {
+    //标识是以组件化模式运行还是集成化模式运行，
+    // 如果是true，以集成化方式运行，如果是false，以组件化方式运行
+    isModule = true
+    // 定义一个包名，用于存放APT生成的所有类文件
+    packageNameForAPT = "com.example.zujianhuapro";
+}

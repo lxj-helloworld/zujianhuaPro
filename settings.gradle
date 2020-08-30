@@ -1,0 +1,8 @@
+rootProject.name='zujianhuaPro'
+include ':app'
+include ':business:food'
+include ':business:waimai'
+include ':router-api'
+include ':route_annotation'
+include ':route_compile'
+include ':router_api'

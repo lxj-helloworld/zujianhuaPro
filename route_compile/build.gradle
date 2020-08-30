@@ -1,0 +1,25 @@
+apply plugin: 'java-library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //构建  -----》》》》----【编译时期】------》》》打包-------》》》安装
+    // As-3.4.1  +  gradle-5.1.1-all + auto-service:1.0-rc4
+    //在编译器可以通过以下依赖让我们自定义的AbstractProcessor工作
+    compileOnly'com.google.auto.service:auto-service:1.0-rc4'
+    annotationProcessor'com.google.auto.service:auto-service:1.0-rc4'
+
+    // 帮助我们通过类调用的形式来生成Java代码
+    implementation "com.squareup:javapoet:1.9.0"
+
+    // 处理@ARouter注解，引入annotation
+    implementation project(':route_annotation')
+}
+
+// java控制台输出中文乱码
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+sourceCompatibility = "7"
+targetCompatibility = "7"
